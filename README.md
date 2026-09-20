@@ -31,12 +31,19 @@ Design your fake data generator around fields real transaction systems actually 
 
 Field	Example
 transaction_id	UUID
+
 account_id	consistent per simulated "customer"
+
 card_id	linked to account
+
 amount	INR/USD
+
 merchant_category	grocery, electronics, travel, crypto, gambling, ATM
+
 merchant_location (lat/long or city)	for geo-impossibility checks
+
 timestamp	event time, not just ingestion time — important for windowing
+
 transaction_type	POS, online, ATM, wire
 
 Tip for realism: simulate ~50–100 "customer" accounts with a normal baseline behavior each (typical spend range, typical hours, typical locations), then inject a small percentage (~2–5%) of transactions that break one of the rules above. This mirrors how real fraud detection is evaluated — against a mostly-normal population with rare true positives.
