@@ -1,17 +1,17 @@
 # fraudwatch-streaming
 
-# The business problem
+## The business problem
 
 Banks process millions of card/UPI/wire transactions daily and must flag suspicious ones within seconds, before the transaction settles — not hours later in a batch report. A transaction that looks fine in isolation (₹5,000 grocery purchase) can be highly suspicious in context (same card used in Mumbai and Dubai 10 minutes apart).
 
-# problem statement:
+## problem statement:
 "Build a real-time transaction monitoring system that ingests card transaction events, applies fraud-detection rules within seconds of each transaction, and surfaces flagged transactions on a live dashboard for a fraud-ops team to review."
 
-# Realistic fraud scenarios to detect (pick 4–5, not all)
+## Realistic fraud scenarios to detect (pick 4–5, not all)
 
 These are the actual pattern categories banks monitor — use them as your rule logic:
 
-# Velocity fraud — too many transactions from one account in a short window (e.g. 5+ transactions in 2 minutes). Real scenario: a stolen card gets used rapidly at multiple merchants before the owner notices.
+Velocity fraud — too many transactions from one account in a short window (e.g. 5+ transactions in 2 minutes). Real scenario: a stolen card gets used rapidly at multiple merchants before the owner notices.
 Geo-impossibility ("impossible travel") — same card used in two locations too far apart to be physically possible in the time elapsed (Mumbai at 10:00, Dubai at 10:15). This is one of banks' most common real rules.
 Amount anomaly — transaction significantly above the account's historical average (e.g. 10x their typical spend). Real scenario: a compromised card suddenly used for a ₹2,00,000 electronics purchase when the account normally spends ₹2,000–5,000.
 Odd-hour activity — transactions at unusual times for that account's normal behavior (e.g. 3 AM when the account has no history of night activity).
